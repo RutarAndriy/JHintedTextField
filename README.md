@@ -9,7 +9,7 @@
 - [Скріншоти](#screenshots)
 
 Додавання компонента в NetBeans GUI Builder
-- Додаємо [залежність](https://jitpack.io/#RutarAndriy/JHintedTextField/v1.0.0) у свій проект
+- Додаємо [залежність](https://jitpack.io/#RutarAndriy/JHintedTextField) у свій проект
 - Додаємо форму / діалогове вікно \
 `New` > `Other` > `Swing GUI Forms` > `JFrame / JDialog`
 - Додаємо власний JavaBeans-компонент \
