@@ -1,8 +1,10 @@
-package com.rutar.jhint_text_field;
+package com.rutar.jhintedtextfield;
 
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.beans.BeanInfo;
+import java.util.ArrayList;
 
 import static javax.swing.JOptionPane.*;
 
@@ -15,6 +17,7 @@ public class JHintedTextFieldDemo extends JFrame {
 public JHintedTextFieldDemo() {
     
 initComponents();
+initAppIcons();
 
 button_info.setText(getHTML("Отримати інформацію"));
 button_info.setActionCommand("info");
@@ -32,9 +35,9 @@ setLocationRelativeTo(null);
     @SuppressWarnings("unchecked")
     private void initComponents() {//GEN-BEGIN:initComponents
 
-        jHintTextField_1 = new JHintedTextField();
-        jHintTextField_2 = new JHintedTextField();
-        jHintTextField_3 = new JHintedTextField();
+        jHintTextField_1 = new com.rutar.jhint_text_field.JHintedTextField();
+        jHintTextField_2 = new com.rutar.jhint_text_field.JHintedTextField();
+        jHintTextField_3 = new com.rutar.jhint_text_field.JHintedTextField();
         button_info = new JButton();
         button_reset = new JButton();
 
@@ -52,10 +55,11 @@ setLocationRelativeTo(null);
         jHintTextField_3.setHintColor(new Color(0, 255, 0));
         jHintTextField_3.setHintText("Додаткова інформація");
 
-        button_info.setText("info");
+        button_info.setText("<html><p align=\\\"center\\\">Отримати інформацію</p></html>");
         button_info.addActionListener(formListener);
 
-        button_reset.setText("reset");
+        button_reset.setText("<html><p align=\\\"center\\\">Очистити всі поля</p></html>");
+        button_reset.setToolTipText("");
         button_reset.addActionListener(formListener);
 
         GroupLayout layout = new GroupLayout(getContentPane());
@@ -76,15 +80,16 @@ setLocationRelativeTo(null);
         layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(button_info, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jHintTextField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jHintTextField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jHintTextField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addComponent(button_reset, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                    .addComponent(button_reset)
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(button_info, GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jHintTextField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jHintTextField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jHintTextField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -143,12 +148,22 @@ setLocationRelativeTo(null);
 
 public static void main (String args[]) {
 
-try { UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel"); }
-catch (Exception ex) {}
+    EventQueue.invokeLater(() -> {
+        new JHintedTextFieldDemo().setVisible(true);
+    });
+}
 
-// ............................................................................
+///////////////////////////////////////////////////////////////////////////////
 
-EventQueue.invokeLater(() -> { new JHintedTextFieldDemo().setVisible(true); });
+private void initAppIcons() {
+
+JHintedTextFieldBeanInfo beanInfo = new JHintedTextFieldBeanInfo();
+ArrayList<Image> icons = new ArrayList<>();
+
+icons.add(beanInfo.getIcon(BeanInfo.ICON_COLOR_16x16));
+icons.add(beanInfo.getIcon(BeanInfo.ICON_COLOR_32x32));
+
+setIconImages(icons);
 
 }
 
@@ -157,9 +172,9 @@ EventQueue.invokeLater(() -> { new JHintedTextFieldDemo().setVisible(true); });
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JButton button_info;
     private JButton button_reset;
-    private JHintedTextField jHintTextField_1;
-    private JHintedTextField jHintTextField_2;
-    private JHintedTextField jHintTextField_3;
+    private com.rutar.jhint_text_field.JHintedTextField jHintTextField_1;
+    private com.rutar.jhint_text_field.JHintedTextField jHintTextField_2;
+    private com.rutar.jhint_text_field.JHintedTextField jHintTextField_3;
     // End of variables declaration//GEN-END:variables
 
 ///////////////////////////////////////////////////////////////////////////////
