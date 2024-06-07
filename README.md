@@ -22,6 +22,8 @@
 <details name="screenshots">
   <summary>Скріншоти</summary>
   <img title="Скріншот №1" src="/scr_1.png">
+  </br>
   <img title="Скріншот №2" src="/scr_2.png">
+  </br>
   <img title="Скріншот №3" src="/scr_3.png">
 </details>
