@@ -7,8 +7,7 @@
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="2"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -17,7 +16,7 @@
     <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
-    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="3"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
   </AuxValues>
@@ -26,75 +25,78 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jHintTextField_1" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jHintTextField_2" alignment="0" pref="230" max="32767" attributes="0"/>
-                  <Component id="jHintTextField_3" alignment="0" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jHintedTextField_3" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                  <Component id="jHintedTextField_1" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                  <Component id="jHintedTextField_2" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="button_info" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="button_reset" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="btn_info" linkSize="2" min="-2" pref="122" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="btn_reset" linkSize="2" min="-2" pref="122" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="button_reset" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="button_info" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jHintTextField_1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jHintTextField_2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jHintTextField_3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jHintedTextField_1" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <Component id="jHintedTextField_2" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <Component id="jHintedTextField_3" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="btn_info" linkSize="3" alignment="0" pref="93" max="32767" attributes="0"/>
+                  <Component id="btn_reset" linkSize="3" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.rutar.jhint_text_field.JHintedTextField" name="jHintTextField_1">
+    <Component class="com.rutar.jhintedtextfield.JHintedTextField" name="jHintedTextField_1">
       <Properties>
-        <Property name="hintText" type="java.lang.String" value="&#x417;&#x430;&#x43f;&#x43e;&#x432;&#x43d;&#x456;&#x442;&#x44c; &#x434;&#x430;&#x43d;&#x435; &#x43f;&#x43e;&#x43b;&#x435;"/>
+        <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
     </Component>
-    <Component class="com.rutar.jhint_text_field.JHintedTextField" name="jHintTextField_2">
+    <Component class="com.rutar.jhintedtextfield.JHintedTextField" name="jHintedTextField_2">
       <Properties>
         <Property name="hintColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="ff" type="rgb"/>
+          <Color blue="33" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="hintText" type="java.lang.String" value="&#x414;&#x430;&#x43d;&#x435; &#x43f;&#x43e;&#x43b;&#x435; &#x454; &#x43e;&#x431;&#x43e;&#x432;&apos;&#x44f;&#x437;&#x43a;&#x43e;&#x432;&#x438;&#x43c; !!!"/>
+        <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
     </Component>
-    <Component class="com.rutar.jhint_text_field.JHintedTextField" name="jHintTextField_3">
+    <Component class="com.rutar.jhintedtextfield.JHintedTextField" name="jHintedTextField_3">
       <Properties>
         <Property name="hintColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="ff" red="0" type="rgb"/>
+          <Color blue="0" green="ff" red="33" type="rgb"/>
         </Property>
-        <Property name="hintText" type="java.lang.String" value="&#x414;&#x43e;&#x434;&#x430;&#x442;&#x43a;&#x43e;&#x432;&#x430; &#x456;&#x43d;&#x444;&#x43e;&#x440;&#x43c;&#x430;&#x446;&#x456;&#x44f;"/>
+        <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="button_info">
+    <Component class="javax.swing.JButton" name="btn_info">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p align=\u005c&quot;center\u005c&quot;&gt;&#x41e;&#x442;&#x440;&#x438;&#x43c;&#x430;&#x442;&#x438; &#x456;&#x43d;&#x444;&#x43e;&#x440;&#x43c;&#x430;&#x446;&#x456;&#x44e;&lt;/p&gt;&lt;/html&gt;" containsInvalidXMLChars="true"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p align=&quot;center&quot;&gt;&#x41e;&#x442;&#x440;&#x438;&#x43c;&#x430;&#x442;&#x438; &#x456;&#x43d;&#x444;&#x43e;&#x440;&#x43c;&#x430;&#x446;&#x456;&#x44e;&lt;/p&gt;&lt;/html&gt;"/>
+        <Property name="actionCommand" type="java.lang.String" value="btn_info"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonPressed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="pack();&#xa;setLocationRelativeTo(null);&#xa;btn_info.requestFocus();"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="button_reset">
+    <Component class="javax.swing.JButton" name="btn_reset">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p align=\u005c&quot;center\u005c&quot;&gt;&#x41e;&#x447;&#x438;&#x441;&#x442;&#x438;&#x442;&#x438; &#x432;&#x441;&#x456; &#x43f;&#x43e;&#x43b;&#x44f;&lt;/p&gt;&lt;/html&gt;" containsInvalidXMLChars="true"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p align=&quot;center&quot;&gt;&#x41e;&#x447;&#x438;&#x441;&#x442;&#x438;&#x442;&#x438; &#x432;&#x441;&#x456; &#x43f;&#x43e;&#x43b;&#x44f;&lt;/p&gt;&lt;/html&gt;"/>
+        <Property name="actionCommand" type="java.lang.String" value="btn_reset"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>

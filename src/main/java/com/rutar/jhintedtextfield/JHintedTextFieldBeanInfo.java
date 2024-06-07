@@ -75,9 +75,6 @@ property = new PropertyDescriptor("hintColor", JHintedTextField.class,
 property.setPreferred(true);
 properties.add(property);
 
-property.setPreferred(true);
-properties.add(property);
-
 }
 
 catch (IntrospectionException e) { }

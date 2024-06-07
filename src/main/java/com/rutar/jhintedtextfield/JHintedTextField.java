@@ -18,10 +18,10 @@ public class JHintedTextField extends JTextField {
 ///////////////////////////////////////////////////////////////////////////////
 // Змінні, які реалізують основний функціонал компонента //////////////////////
 
-private String text;                                                   // Текст
+private String text = "";                                              // Текст
 private String hintText = "Заповніть поле";                   // Текст підказки
 
-private boolean hint;                      // Якщо true - відображаємо підказку
+private boolean hint = true;               // Якщо true - відображаємо підказку
 private Color hintColor = new Color(153, 153, 153);    // Колір тексту підказки
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -36,7 +36,8 @@ private static ArrayList <JHintedTextFieldListener> listeners = null;
 ///////////////////////////////////////////////////////////////////////////////
 
 public JHintedTextField() { foreground = getForeground();
-                            addFocusListener(focusListener); }
+                            addFocusListener(focusListener);
+                            updateHint(); }
 
 ///////////////////////////////////////////////////////////////////////////////
 // Getter'и та Setter'и - повертають та задають властивості компонента ////////
@@ -66,7 +67,8 @@ public void setHint (boolean hint) {
  * @return текст поля введення
  */
 @Override
-public String getText() { return hint ? "" : super.getText(); }
+public String getText() { String getText = super.getText();
+                          return getText.equals(hintText) ? "" : getText; }
 
 /**
  * Задання тексту поля введення
@@ -173,14 +175,19 @@ for (JHintedTextFieldListener listener : getListeners()) {
 
 private void updateHint() {
 
-    // Поле порожнє - відображаємо підказку
-    if (text == null ||
-        text.isEmpty()) { super.setText(hintText);
-                          super.setForeground(hintColor); }
-    // Поле не порожнє - приховуємо підказку
-    else                { super.setText(text);
-                          super.setForeground(foreground); }
-
+    if (focused) { super.setText(getText());
+                   super.setForeground(foreground); }
+    
+    else {
+    
+        // Поле порожнє - відображаємо підказку
+        if (getText().isEmpty()) { super.setText(getHintText());
+                                   super.setForeground(getHintColor()); }
+        // Поле не порожнє - приховуємо підказку
+        else                { super.setText(getText());
+                              super.setForeground(foreground); }
+    
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -190,10 +197,12 @@ private void updateHint() {
 private final FocusListener focusListener = new FocusListener() {
 
 @Override
-public void focusGained (FocusEvent e) { focused = true; }  // Одержання фокусу
+public void focusGained (FocusEvent e) { focused = true;
+                                         updateHint(); }    // Одержання фокусу
 
 @Override
-public void focusLost (FocusEvent e) { focused = false; }      // Втрата фокусу
+public void focusLost (FocusEvent e) { focused = false;
+                                       updateHint(); }         // Втрата фокусу
 
 };
 
