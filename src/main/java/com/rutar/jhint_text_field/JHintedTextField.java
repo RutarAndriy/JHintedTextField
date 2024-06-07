@@ -8,7 +8,7 @@ import java.awt.event.*;
 // @author RutarAndriy
 // 26.11.2021
 
-public class JHintTextField extends JTextField {
+public class JHintedTextField extends JTextField {
 
 private boolean showHint;
 
@@ -20,7 +20,7 @@ private Color hintColor = new Color(153, 153, 153);
 ///////////////////////////////////////////////////////////////////////////////
 // Головний конструктор
 
-public JHintTextField() {
+public JHintedTextField() {
 
     foreground = getForeground();
     addFocusListener(focusListener);

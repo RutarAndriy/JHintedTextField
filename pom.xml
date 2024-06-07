@@ -7,11 +7,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rutar</groupId>
-    <artifactId>JHintTextField</artifactId>
+    <artifactId>JHintedTextField</artifactId>
     <version>1.0.0</version>
 
     <name>JHintTextField</name>
-    <url>https://github.com/RutarAndriy/JHintTextField</url>
+    <url>https://github.com/RutarAndriy/JHintedTextField</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,7 +54,7 @@
                         <archive>
                             <manifest>
                                 <addClasspath>false</addClasspath>
-                                <mainClass>com.rutar.jhint_text_field.JHintTextFieldDemo</mainClass>
+                                <mainClass>com.rutar.jhint_text_field.JHintedTextFieldDemo</mainClass>
                             </manifest>
                         </archive>
                     </configuration>

@@ -61,12 +61,12 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.rutar.jhint_text_field.JHintTextField" name="jHintTextField_1">
+    <Component class="com.rutar.jhint_text_field.JHintedTextField" name="jHintTextField_1">
       <Properties>
         <Property name="hintText" type="java.lang.String" value="&#x417;&#x430;&#x43f;&#x43e;&#x432;&#x43d;&#x456;&#x442;&#x44c; &#x434;&#x430;&#x43d;&#x435; &#x43f;&#x43e;&#x43b;&#x435;"/>
       </Properties>
     </Component>
-    <Component class="com.rutar.jhint_text_field.JHintTextField" name="jHintTextField_2">
+    <Component class="com.rutar.jhint_text_field.JHintedTextField" name="jHintTextField_2">
       <Properties>
         <Property name="hintColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -74,7 +74,7 @@
         <Property name="hintText" type="java.lang.String" value="&#x414;&#x430;&#x43d;&#x435; &#x43f;&#x43e;&#x43b;&#x435; &#x454; &#x43e;&#x431;&#x43e;&#x432;&apos;&#x44f;&#x437;&#x43a;&#x43e;&#x432;&#x438;&#x43c; !!!"/>
       </Properties>
     </Component>
-    <Component class="com.rutar.jhint_text_field.JHintTextField" name="jHintTextField_3">
+    <Component class="com.rutar.jhint_text_field.JHintedTextField" name="jHintTextField_3">
       <Properties>
         <Property name="hintColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="ff" red="0" type="rgb"/>

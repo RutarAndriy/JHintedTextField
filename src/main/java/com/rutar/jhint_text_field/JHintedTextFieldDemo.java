@@ -8,11 +8,11 @@ import static javax.swing.JOptionPane.*;
 
 // ............................................................................
 
-public class JHintTextFieldDemo extends JFrame {
+public class JHintedTextFieldDemo extends JFrame {
 
 ///////////////////////////////////////////////////////////////////////////////
 
-public JHintTextFieldDemo() {
+public JHintedTextFieldDemo() {
     
 initComponents();
 
@@ -30,12 +30,11 @@ setLocationRelativeTo(null);
 ///////////////////////////////////////////////////////////////////////////////
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents() {//GEN-BEGIN:initComponents
 
-        jHintTextField_1 = new JHintTextField();
-        jHintTextField_2 = new JHintTextField();
-        jHintTextField_3 = new JHintTextField();
+        jHintTextField_1 = new JHintedTextField();
+        jHintTextField_2 = new JHintedTextField();
+        jHintTextField_3 = new JHintedTextField();
         button_info = new JButton();
         button_reset = new JButton();
 
@@ -98,13 +97,13 @@ setLocationRelativeTo(null);
         FormListener() {}
         public void actionPerformed(ActionEvent evt) {
             if (evt.getSource() == button_info) {
-                JHintTextFieldDemo.this.buttonPressed(evt);
+                JHintedTextFieldDemo.this.buttonPressed(evt);
             }
             else if (evt.getSource() == button_reset) {
-                JHintTextFieldDemo.this.buttonPressed(evt);
+                JHintedTextFieldDemo.this.buttonPressed(evt);
             }
         }
-    }// </editor-fold>//GEN-END:initComponents
+    }//GEN-END:initComponents
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -149,7 +148,7 @@ catch (Exception ex) {}
 
 // ............................................................................
 
-EventQueue.invokeLater(() -> { new JHintTextFieldDemo().setVisible(true); });
+EventQueue.invokeLater(() -> { new JHintedTextFieldDemo().setVisible(true); });
 
 }
 
@@ -158,9 +157,9 @@ EventQueue.invokeLater(() -> { new JHintTextFieldDemo().setVisible(true); });
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JButton button_info;
     private JButton button_reset;
-    private JHintTextField jHintTextField_1;
-    private JHintTextField jHintTextField_2;
-    private JHintTextField jHintTextField_3;
+    private JHintedTextField jHintTextField_1;
+    private JHintedTextField jHintTextField_2;
+    private JHintedTextField jHintTextField_3;
     // End of variables declaration//GEN-END:variables
 
 ///////////////////////////////////////////////////////////////////////////////
