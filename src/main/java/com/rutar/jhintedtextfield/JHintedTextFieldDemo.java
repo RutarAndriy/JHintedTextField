@@ -42,12 +42,15 @@ initAppIcons();
         setTitle("JHintTextField Demo");
         setResizable(false);
 
+        jHintedTextField_1.setHintText("Заповніть поле №1");
         jHintedTextField_1.setHorizontalAlignment(JTextField.CENTER);
 
         jHintedTextField_2.setHintColor(new Color(255, 0, 51));
+        jHintedTextField_2.setHintText("Заповніть поле №2");
         jHintedTextField_2.setHorizontalAlignment(JTextField.CENTER);
 
         jHintedTextField_3.setHintColor(new Color(51, 255, 0));
+        jHintedTextField_3.setHintText("Заповніть поле №3");
         jHintedTextField_3.setHorizontalAlignment(JTextField.CENTER);
 
         btn_info.setText("<html><p align=\"center\">Отримати інформацію</p></html>");
@@ -108,9 +111,9 @@ initAppIcons();
         case "btn_info" -> {                   // Отримання введеної інформації
             
             String template = """
-                              Перше поле: %s
-                              Друге поле: %s
-                              Третє поле: %s
+                              Поле №1: %s
+                              Поле №2: %s
+                              Поле №3: %s
                               """;
 
             String info = String.format(template,

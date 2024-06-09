@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.*;
 import javax.swing.*;
 import java.awt.event.*;
+import javax.swing.event.*;
 
 // ............................................................................
 
@@ -23,21 +24,22 @@ private String hintText = "Заповніть поле";                   // Т
 
 private boolean hint = true;               // Якщо true - відображаємо підказку
 private Color hintColor = new Color(153, 153, 153);    // Колір тексту підказки
+private Color normalColor = null;                    // Початковий колір тексту
 
 ///////////////////////////////////////////////////////////////////////////////
 // Допоміжні змінні /////////////////////////////////////////// ///////////////
 
-private boolean focused = false;                   // Поле знаходиться у фокусі
-private Color foreground = null;                     // Початковий колір тексту
+private boolean focused = false;       // Якщо true - поле знаходиться у фокусі
 private static ArrayList <JHintedTextFieldListener> listeners = null;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Головний конструктор компонента ////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-public JHintedTextField() { foreground = getForeground();
+public JHintedTextField() { normalColor = getForeground();
                             addFocusListener(focusListener);
-                            updateHint(); }
+                            getDocument().addDocumentListener(docListener);
+                            updateText(false); }
 
 ///////////////////////////////////////////////////////////////////////////////
 // Getter'и та Setter'и - повертають та задають властивості компонента ////////
@@ -56,8 +58,8 @@ public boolean isHint() { return hint; }
 public void setHint (boolean hint) {
     
     boolean oldValue = this.hint;
-    this.hint = hint;
-    updateHint();
+    this.hint = hint;    
+    updateText(false);
     fireAll("hint", oldValue, hint); }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -80,7 +82,7 @@ public void setText (String text) {
     String oldValue = this.text;
     this.text = text;  
     super.setText(text);
-    updateHint();
+    updateText(false);
     fireAll("text", oldValue, text); }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -99,7 +101,7 @@ public void setHintText (String hintText) {
     
     String oldValue = this.hintText;
     this.hintText = hintText;
-    updateHint();
+    updateText(true);
     fireAll("hintText", oldValue, hintText); }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -118,7 +120,7 @@ public void setHintColor (Color hintColor) {
     
     Color oldValue = this.hintColor;
     this.hintColor = hintColor;
-    updateHint();
+    updateText(false);
     fireAll("hintColor", oldValue, hintColor); }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -173,21 +175,15 @@ for (JHintedTextFieldListener listener : getListeners()) {
 // Допоміжні методи ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-private void updateHint() {
+private void updateText (boolean forceHint) {
 
-    if (focused) { super.setText(getText());
-                   super.setForeground(foreground); }
-    
-    else {
-    
-        // Поле порожнє - відображаємо підказку
-        if (getText().isEmpty()) { super.setText(getHintText());
-                                   super.setForeground(getHintColor()); }
-        // Поле не порожнє - приховуємо підказку
-        else                { super.setText(getText());
-                              super.setForeground(foreground); }
-    
-    }
+boolean showHint = getText().isEmpty() && !focused;
+
+if (hint && (showHint || forceHint)) { super.setForeground(hintColor);
+                                       super.setText(hintText); }
+else                                 { super.setForeground(normalColor);
+                                       super.setText(text); }
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -197,12 +193,29 @@ private void updateHint() {
 private final FocusListener focusListener = new FocusListener() {
 
 @Override
-public void focusGained (FocusEvent e) { focused = true;
-                                         updateHint(); }    // Одержання фокусу
+public void focusGained (FocusEvent e)                      // Одержання фокусу
+    { focused = true;
+      updateText(false); }
 
 @Override
-public void focusLost (FocusEvent e) { focused = false;
-                                       updateHint(); }         // Втрата фокусу
+public void focusLost (FocusEvent e)                           // Втрата фокусу
+    { focused = false;
+      updateText(false); }
+
+};
+
+///////////////////////////////////////////////////////////////////////////////
+
+private final DocumentListener docListener = new DocumentListener() {
+
+@Override
+public void insertUpdate (DocumentEvent e) { text = getText(); }
+
+@Override
+public void removeUpdate (DocumentEvent e) { text = getText(); }
+
+@Override
+public void changedUpdate (DocumentEvent e) {}
 
 };
 

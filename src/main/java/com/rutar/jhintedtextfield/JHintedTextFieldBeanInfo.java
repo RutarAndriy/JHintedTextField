@@ -63,6 +63,12 @@ property = new PropertyDescriptor("hint", JHintedTextField.class,
 property.setPreferred(true);
 properties.add(property);
 
+// Text
+property = new PropertyDescriptor("text", JHintedTextField.class,
+                                  "getText", "setText");
+property.setPreferred(true);
+properties.add(property);
+
 // HintText
 property = new PropertyDescriptor("hintText", JHintedTextField.class,
                                   "getHintText", "setHintText");
